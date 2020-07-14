@@ -1,8 +1,8 @@
 console.log("Code Line")
 
 {
-    {
-        console.log('Hello')
-        console.log("World!")
-    }
+
+    console.log('Hello')
+    console.log("World!")
+
 }
