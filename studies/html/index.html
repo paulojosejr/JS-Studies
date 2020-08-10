@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Exercises HTML</h1>
+    </header>
+    <nav>
+        <a href wm-nav="exercises/test.html"> 00 - test</a> |
+        <a href wm-nav="exercises/test2.html"> 01 - test</a>
+    </nav>
+    <section id="content"></section>
+    <footer>
+        <br>
+        Modern Web
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link =>{
+                const content = document.getElementById('content')
+            link.onclick = function (e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => content.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
