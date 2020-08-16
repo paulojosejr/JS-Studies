@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Specificity CSS</title>
+    <style>
+        /* https://specificity.keegan.st/ */
+
+        /*
+            1. Inline
+            2. ID
+            3. Class, pseudo-class, attribute
+            3. Element, pseudo-Element
+        */
+
+        body{ font-size: 40px;}
+        
+        div{background-color: #00B; color: #fff;}
+        div[wm-color] {background-color: darkorange;}
+        div.style{background-color: green;}
+        #unique1, #unique2 {background-color: black;}
+        div:hover {background-color: purple;}
+    </style>
+</head>
+
+<body>
+    <div id="unique1" class="style" style="background-color: red;">
+        #unique1 vs .style vs inline
+    </div>
+    <div id="unique2" class="style">#unique vs .style</div>
+    <div class="style" wm-color>.style vs wm-color</div>
+    <div wm-color>wm-color</div>
+    <div class="style">.style</div>
+    <div>element</div>
+</body>
+
+</html>

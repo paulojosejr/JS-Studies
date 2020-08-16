@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Specificity CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /*
+            In general lines...
+
+            1. Rule with !important
+            2. More specific selectors
+            3. Last rule processed (tie)
+        */
+
+        p{
+            background-color: #aaa;
+        }
+
+        .observation{
+            background-color: #5F5;
+            border: dashed 5px;
+            padding: 200px!important;
+            font-size: 40px;
+        }
+
+        p.observation{
+            padding: 2px;
+            background: linear-gradient(to right, red, yellow);
+        }
+    </style>
+</head>
+
+<body>
+    <p class='observation'>Look at this observation!</p>
+</body>
+
+</html>
