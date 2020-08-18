@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Units #02</title>
+    <style>
+        .out{
+            position: relative;
+            background-color: orange;
+            height: 400px;
+            width: 400px;
+            padding: 50px;
+        }
+
+        .inside{
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: static; /* Content */
+            position: relative; /* Content */
+            position: absolute; /* Content + Padding */
+            position: fixed; /* Viewport */
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="inside"></div>
+    </div>
+</body>
+</html>
