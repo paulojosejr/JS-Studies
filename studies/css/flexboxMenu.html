@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Desafio Menu</title>
+    <title>Menu</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <style>
         body {
@@ -12,7 +12,7 @@
             background-color: lightgray;
         }
         
-        .cabecalho {
+        .header {
             background: #333;
             color: #fff;
             border-bottom: solid 5px #4faddb;
@@ -29,7 +29,7 @@
             padding: 0;
         }
         
-        .cabecalho a {
+        .header a {
             text-decoration: none;
             color: #eee;
             font-size: 1.3em;
@@ -41,48 +41,65 @@
             color: #000;
         }
         
-        .cabecalho .botao {
+        .header .bud {
             border-radius: 30px;
             padding: 10px 25px;
             margin-right: 10px;
         }
         
-        .destaque {
+        .spotlight {
             background: #f50a31;
             color: #fff;
         }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu {
+            flex-grow: 10;
+        }
+
+        .menu ul{
+            display: flex;
+        }
+
+        .menu li {
+            margin: 0px 10px;
+        }
         /* ==================== */
-        /* Solução com Flex Box */
+        /* = Flex Box solution= */
         /* ==================== */
     </style>
 </head>
 
 <body>
-    <header class="cabecalho">
+    <header class="header">
         <div class="logo">
-            <a href="#inicio">
+            <a href="#start">
                 <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
             </a>
         </div>
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#inicio">Início</a>
+                    <a href="#start">Start</a>
                 </li>
                 <li>
-                    <a href="#cursos">Cursos</a>
+                    <a href="#courses">Courses</a>
                 </li>
                 <li>
-                    <a href="#sobre">Sobre</a>
+                    <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="#contato">Contato</a>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
-        <aside class="autenticacao">
+        <aside class="authentication">
             <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
+            <a href="#register" class="bud spotlight">Register</a>
         </aside>
     </header>
 </body>
