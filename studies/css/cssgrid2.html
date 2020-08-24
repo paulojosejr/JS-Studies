@@ -17,8 +17,28 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            border: solid 5px dodgerblue;
+            border: solid 5px crimson;
             background: #fff;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns: [initiation]1fr [half-1 middle-1]1fr [half-2 middle-2] 1fr[finish];
+            grid-template-rows: repeat(3, 1fr);
+
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            grid-gap: 50px 10px;
+            grid-gap: 10px;
+        }
+
+        .d1{
+            grid-column-start: half-2;
+            grid-column-end: finish;
+            grid-column: middle-1 / finish;
+            grid-row: 1 / span 2;
+            /* row- start column-start row-end column-end */
+            grid-area: 1 / middle-1/ span 3 / finish;
         }
     </style>
 </head>
