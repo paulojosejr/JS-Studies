@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Select Elements #01</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="content exercise">
+    <div id="first">#first</div>
+    <div>Second</div>
+    <div class="third last">.third .last</div>
+    <script>              
+        document.getElementById('first').classList.add('spotlight')
+
+        const divs = document.getElementsByTagName('div')
+        Array.from(divs).forEach(e => e.classList.remove('spotlight'))
+
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('spotlight'))
+
+        const lastElements = document.getElementsByClassName('last')
+        for(let e of lastElements) {
+            e.classList.remove('spotlight')
+        }
+    </script>
+</body>
+</html>
