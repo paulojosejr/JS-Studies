@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Selecionar Elementos #03</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Selecting Elements #03</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         form {
             display: flex;
@@ -20,18 +20,25 @@
     </style>
 </head>
 
-<body class="conteudo exercicio">
-    <h1>Formulário</h1>
-    <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
+<body class="content exercise">
+    <h1>Form</h1>
+    <form name="search" action="http://www.google.com/search">
+        <input type="text" name="q" placeholder="Type the term...">
         <select name="hl">
-            <option value="pt-br">Português (Brasil)</option>
-            <option value="en-us">Inglês (Americano)</option>
+            <option value="pt-br">Portuguese (Brazil)</option>
+            <option value="en-us">English (American)</option>
         </select>
-        <button>Pesquisar</button>
+        <button>Search</button>
     </form>
     <script>
-        // ...
+        console.log(document.forms)
+        console.log(document.forms[0])
+        console.log(document.getElementsByName('search'))
+        console.log(document.search)
+        console.log(document.search.q)
+        document.search.q.value = 'Linux'
+        document.search.hl.value = 'en-us'
+        console.log(document.search.hl.selectedIndex)
     </script>
 </body>
 

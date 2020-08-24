@@ -2,15 +2,35 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Selecionar Elementos #02</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Selecting Elements #02</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="conteudo exercicio">
-    <div id="primeiro">#primeiro</div>
-    <div>Segundo</div>
-    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+<body class="content exercise">
+    <div id="first">#first</div>
+    <div>Second</div>
+    <div class="third last"><span wb-attrib>.third .last</span></div>
     <script>              
-        // ...
+        document.querySelector('#first').classList.add('spotlight')
+
+        const select = selecting => document.querySelectorAll(selecting).forEach(e => e.classList.add('spotlight'))
+        const unselect =selecting => document.querySelectorAll(selecting).forEach(e => e.classList.remove('spotlight'))
+
+        select('div')
+
+        unselect('*')
+        select('.third.last')
+
+        unselect('*')
+        select(':not(#first')
+
+        unselect('*')
+        select(':nth-child(1)')
+
+        unselect('*')
+        select('div:nth-of-type(1)')
+
+        unselect('*')
+        select('[wb-attrib]')
     </script>
 </body>
 </html>
