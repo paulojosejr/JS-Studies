@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Accessing Attributes #02</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body class='content exercise'>
+    <div>
+        <label for="shopping">Shopping</label>
+        <ul id="shopping" destination='office' data-urgency="5">
+            <li>Coffee</li>
+            <li>Water</li>
+            <li>Plastic Cup</li>
+        </ul>
+    </div>
+    <script>
+        const list = document.querySelector('div ul[destination="office"]')
+        console.log('Element "ul"...')
+        console.log('childNodes', list.childNodes)
+        console.log('destination', list.destination)
+        console.log('getAttribute', list.getAttribute('destination'))
+        console.log('hasAttribute', list.hasAttribute('destination'))
+        list.setAttribute('destination', 'office')
+        list.setAttribute('stats', 'open')
+        list.removeAttribute('destination')
+        console.log(list.dataset.urgency)
+        list.dataset.urgency = 4
+        console.log(list.getAttribute('data-urgency'))
+
+        // caution
+        const label = document.querySelector('label')
+        console.log(label.for)
+        console.log(label.htmlFor)
+        console.log(label.getAttribute('for'))
+    </script>
+</body>
+
+</html>

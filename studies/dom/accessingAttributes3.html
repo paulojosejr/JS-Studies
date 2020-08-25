@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Accessing Attributes #03</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body class='content exercise'>
+    <div>
+        <ul id="shopping" destination='officer' data-urgency="5">
+            <li>Coffee</li>
+            <li>Water</li>
+            <li>Plastic Cup</li>
+        </ul>
+    </div>
+    <script>
+        const list = document.querySelector('#shopping')
+
+        // only reading
+        console.log(list.attributes)
+        console.log(list.attributes[0])
+        console.log(list.attributes.id)
+        console.log(list.attributes[1])
+        console.log(list.attributes.destination)
+        console.log(list.attributes[2])
+        console.log(list.attributes['data-urgency'])
+
+    </script>
+</body>
+
+</html>
