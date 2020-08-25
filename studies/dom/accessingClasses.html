@@ -12,7 +12,25 @@
         Classes
     </div>
     <script>
-        // ...
+        const div = document.querySelector('div')
+        const classes = div.classList
+        classes.add('spotlight')
+        classes.remove('spotlight')
+        classes.toggle('spotlight')
+        console.log(classes.contains('spotlight'))
+        console.log(classes.length)
+        classes.toggle('spotlight')
+        console.log(classes.length)
+
+        classes.add('spotlight1')
+        classes.add('spotlight2')
+        console.log(classes.length)
+
+        for(let c of classes) {
+            console.log(c)
+        }
+
+        classes.forEach(c => console.log(c))
     </script>
 </body>
 
