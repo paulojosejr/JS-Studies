@@ -3,8 +3,8 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Trabalhando com Eventos #04</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <title>Work with events #04</title>
+    <link rel='stylesheet' href='css/style.css'>
     <style>
         form {
             display: flex;
@@ -20,17 +20,44 @@
     </style>
 </head>
 
-<body class="conteudo exercicio">
-    <h1>Formulário</h1>
-    <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
+<body class="content exercise">
+    <h1>Form</h1>
+    <form name="search" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Type the term...">
         <select name="hl">
-                <option value="pt-br">Português (Brasil)</option>
-                <option value="en-us">Inglês (Americano)</option>
+                <option value="pt-br">Portuguese (Brazil)</option>
+                <option value="en-us">English (American)</option>
             </select>
-        <button wm-submit>Pesquisar</button>
+        <button wm-submit>Search</button>
     </form>
     <script>
-        // ...
+        // const submit = document.querySelector('[wm-submit]')
+        // submit.onclick = function(e){
+        //     e.preventDefault()
+            
+        //     const form = e.target.parentNode
+        //     const formData = new FormData(form)
+        //     formData.append('ajax', true)
+        //     console.log(formData.get('q'))
+        //     console.log(formData.has('hl'))
+
+        //     for(let data of formData){
+        //         console.log(data)
+        //     }
+        // }
+        const form = document.forms[0]
+        form.onsubmit = function(e){
+            e.preventDefault()
+            
+            const form = e.target
+            const formData = new FormData(form)
+            formData.append('ajax', true)
+            console.log(formData.get('q'))
+            console.log(formData.has('hl'))
+
+            for(let data of formData){
+                console.log(data)
+            }
+        }
     </script>
 </body>
