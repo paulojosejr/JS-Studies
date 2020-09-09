@@ -1,0 +1,29 @@
+<states>
+    <state id="1" name="Acre" initials="AC" />
+    <state id="2" name="Alagoas" initials="AL" />
+    <state id="3" name="Amapá" initials="AP" />
+    <state id="4" name="Amazonas" initials="AM" />
+    <state id="5" name="Bahia" initials="BA" />
+    <state id="6" name="Ceará" initials="CE" />
+    <state id="7" name="Distrito Federal" initials="DF" />
+    <state id="8" name="Espírito Santo" initials="ES" />
+    <state id="9" name="Goiás" initials="GO" />
+    <state id="10" name="Maranhão" initials="MA" />
+    <state id="11" name="Mato Grosso" initials="MT" />
+    <state id="12" name="Mato Grosso do Sul" initials="MS" />
+    <state id="13" name="Minas Gerais" initials="MG" />
+    <state id="14" name="Pará " initials="PA" />
+    <state id="15" name="Paraíba" initials="PB" />
+    <state id="16" name="Paraná" initials="PR" />
+    <state id="17" name="Pernambuco" initials="PE" />
+    <state id="18" name="Piauí" initials="PI" />
+    <state id="19" name="Rio de Janeiro" initials="RJ" />
+    <state id="20" name="Rio Grande do Norte" initials="RN" />
+    <state id="21" name="Rio Grande do Sul" initials="RS" />
+    <state id="22" name="Rondônia" initials="RO" />
+    <state id="23" name="Roraima" initials="RR" />
+    <state id="24" name="Santa Catarina" initials="SC" />
+    <state id="25" name="São Paulo" initials="SP" />
+    <state id="26" name="Sergipe" initials="SE" />
+    <state id="27" name="Tocantins" initials="TO" />
+</states>

@@ -8,9 +8,61 @@
 </head>
 
 <body class="content exercise">
-    <h1>Stats</h1>
+    <h1>States</h1>
 
     <script>
-        // ...
+        function ajax(config) {
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.method, config.url, true)
+
+            xhr.onload = e => {
+                if (xhr.status === 200) {
+                    config.sucess(xhr.response)
+                } else if (xhr.status >= 400) {
+                    config.error({
+                        code: xhr.status,
+                        text: xhr.statusText
+                    })
+                }
+            }
+            xhr.send()
+        }
+
+        function createTable(states) {
+            const lines = states.map(state => {
+                const tdId = document.createElement('td')
+                tdId.innerHTML = state.id
+
+                const tdName = document.createElement('td')
+                tdName.innerHTML = state.name
+
+                const tdInitials = document.createElement('td')
+                tdInitials.innerHTML = state.initials
+
+                const tr = document.createElement('tr')
+
+                tr.appendChild(tdId)
+                tr.appendChild(tdName)
+                tr.appendChild(tdInitials)
+
+                return tr
+            })
+            const table = document.createElement('table')
+            lines.forEach(line => table.appendChild(line))
+            document.body.appendChild(table)
+        }
+
+        ajax({
+            url: "data/states.json",
+            method: "get",
+            sucess(response) {
+                const states = JSON.parse(response)
+                createTable(states)
+            },
+            error(e) {
+                const msg = document.createTextNode(`${e.code}: ${e.text}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>
