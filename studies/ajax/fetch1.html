@@ -11,6 +11,14 @@
     <h1>States</h1>
 
     <script>
-        // ...
+        const url = 'data/states.json'
+        fetch(url)
+        .then(resp => resp.json())
+        .then(states => {
+            const items = states.reduce(
+            (html, state) => html + `<li>${state.name}</li>`, ''
+            )
+            document.body.insertAdjacentHTML('beforeend', `<ul>${items}</ul>`)
+        })
     </script>
 </body>
