@@ -4,7 +4,7 @@
 <head>
     <meta charset='UTF-8'>
     <title>Mini SPA</title>
-    <link rel='stylesheet' href='../css/estilo.css'>
+    <link rel='stylesheet' href='../css/style.css'>
     <style>
         nav {
             font-size: 2em;
@@ -18,13 +18,39 @@
     </style>
 </head>
 
-<body class="conteudo">
+<body class="content">
     <nav>
-        <a href wm-link="series.html" wm-destino=".pagina">Séries</a> |
-        <a href wm-link="linguagens.html" wm-destino=".pagina">Linguagens</a>
+        <a href wm-link="series.html" wm-destination=".page">Series</a> |
+        <a href wm-link="lenguages.html" wm-destination=".page">Lenguages</a>
     </nav>
-    <div class="pagina"></div>
+    <div class="page"></div>
     <script>
-        // ...
+        function navigateViaAjax(url, selector, push = true) {
+            if (!url || !selector) return
+            const element = document.querySelector(selector)
+            fetch(url)
+                .then(resp => resp.text())
+                .then(html => {
+                    element.innerHTML = html
+                    if(push) {
+                        history.pushState({ selector }, "Ajax Page", url)
+                    }
+                })
+        }
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value
+            const destinationSelect = link.attributes['wm-destination'].value
+
+            link.onclick = e => {
+                e.preventDefault()
+                navigateViaAjax(url, destinationSelect)
+            }
+        })
+
+        window.onpopstate = e => {
+            if(e.state) {
+                navigateViaAjax(window.location.href, e.state.selector, false)
+            }
+        }
     </script>
 </body>
