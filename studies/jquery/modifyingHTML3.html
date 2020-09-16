@@ -3,23 +3,35 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Modificando HTML #03</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <title>Modifying HTML #03</title>
+    <link rel='stylesheet' href='css/style.css'>
     <script src='js/jquery.js'></script>
 </head>
 
-<body class='conteudo exercicio'>
-    <h1>Modificando HTML #03</h1>
-    <div id='conteudo'></div>
+<body class='content exercise'>
+    <h1>Modifying HTML #03</h1>
+    <div id='content'></div>
 
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
+
+        $(function() {
+
+        const persons = [
+            { name: 'Ana', grade: 9.1 },
+            { name: 'Bianca', grade: 8.4 },
+            { name: 'Carlos', grade: 7.6 },
+            { name: 'Julia', grade: 9.7 }
         ]
-        
-        // ...
+
+        var tbody = $('#content'),
+            props = ["name", "grade"]
+        $.each(persons, function (i, person) {
+            var tr = $('<tr>')
+            $.each(props, function (i, prop) {
+                $('<td>').html(person[prop]).appendTo(tr).css('border', 'solid 5px')
+            })
+            tbody.append(tr)
+        })
+    })
     </script>
 </body>
