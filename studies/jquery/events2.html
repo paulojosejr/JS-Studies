@@ -3,8 +3,8 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Eventos #02</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <title>Events #02</title>
+    <link rel='stylesheet' href='css/style.css'>
     <script src='js/jquery.js'></script>
     <style>
         input {
@@ -13,14 +13,31 @@
     </style>
 </head>
 
-<body class='conteudo exercicio'>
-    <h1>Eventos #02</h1>
+<body class='content exercise'>
+    <h1>Events #02</h1>
     <div id='div1'>1</div>
-    <div id="resultado1">?</div>
+    <div id="result1">?</div>
     <br>
-    <input type="text" placeholder="Digite e Selecione">
-    <div id="resultado2">?</div>
+    <input type="text" placeholder="Type and Select">
+    <div id="result2">?</div>
     <script>
-        // ...
+        const toggleSpotlight = () => $('#div1').toggleClass('spotlight')
+        // $('#div1').on('mouseenter mouseleave', toggleSpotlight)
+        $('#div1').hover(toggleSpotlight, toggleSpotlight)
+
+        $('#div1').one('mouseenter', e => alert('Important WARNING: Thanks.'))
+        $('#div1').dblclick(e => $('#div1').fadeOut(1000).fadeIn(1000))
+
+        $(window).resize(function(e) {
+            const w = $(window).width()
+            const h = $(window).height()
+            $('#result1').html(`Width: ${w} and Height: ${h}`)
+        })
+
+        $(':input').select(e => {
+            const start = e.target.selectionStart
+            const end = e.target.selectionEnd
+            $('#result2').html(e.target.value.substring(start, end))
+        })
     </script>
 </body>
