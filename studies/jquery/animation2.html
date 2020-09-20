@@ -3,8 +3,8 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Animação #02</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <title>Animation #02</title>
+    <link rel='stylesheet' href='css/style.css'>
     <script src='js/jquery.js'></script>
     <style>
         body {
@@ -25,9 +25,32 @@
 </head>
 
 <body>
-    <div>Animar!</div>
+    <div>Animate!</div>
 
     <script>
-        // ...
+        function changeWidth(value, duration, callback) {
+            $('div').animate({ width: `+=${value}` }, duration, callback)
+        }
+
+        function moveDiagonal(value, duration, callback) {
+            $('div').animate({ top: `+=${value}`, left: `+=${value}` }, duration, callback)
+        }
+
+        function spin(value, duration, callback){
+            $('div').animate ({ transform: `+=${value}`}, {
+                step: function (value) {
+                    $(this).css('transform', `rotate(${value}deg)`)
+                },
+                duration: duration
+            }, 'linear', callback)
+        }
+
+        changeWidth(300, 100, () => {
+            changeWidth(-300, 'slow', () => {
+                moveDiagonal(300, 600, () => {
+                    spin(3600, 3000)
+                })
+            })
+        })
     </script>
 </body>

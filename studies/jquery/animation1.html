@@ -3,8 +3,8 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Animação #01</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <title>Animation #01</title>
+    <link rel='stylesheet' href='css/style.css'>
     <script src='js/jquery.js'></script>
     <style>
         div {
@@ -17,12 +17,20 @@
     </style>
 </head>
 
-<body class='conteudo exercicio'>
-    <h1>Animação #01</h1>
-    <button>Iniciar</button>
-    <div id='animar'>Animar!</div>
+<body class='content exercise'>
+    <h1>Animation #01</h1>
+    <button>Start</button>
+    <div id='animate'>Animation!</div>
 
     <script>        
-        // ...
+        $('button').click(e => {
+            const t = 500
+            // $('#animate').hide(t).show(t)
+            $('#animate').toggle(t).toggle(t)
+            // $('#animate').fadeOut(t).fadeIn(t)
+            $('#animate').fadeToggle(t).fadeToggle(t)
+            // $('#animate').slideUp(t).slideDown(t)
+            $('#animate').slideToggle(t).slideToggle(t)
+        })
     </script>
 </body>
