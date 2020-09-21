@@ -20,7 +20,7 @@ h1 {
     font-size: 4em;
 }
 
-.timer .digite {
+.timer .digit {
     background-color: #333;
     color: #FFF;
     padding: 10px 20px;
@@ -29,7 +29,7 @@ h1 {
     font-size: 3em;
 }
 
-.timer .tab {
+.timer .separator {
     color: #000;
     margin: 5px;
     font-size: 4em;
