@@ -3,7 +3,7 @@
         if (!hash) return
 
         const link = document.querySelector(`[wm-link='${hash}']`)
-        if(!link) return
+        if (!link) return
 
         const destiny = document.querySelector('[wm-link-destiny]')
 
@@ -12,6 +12,7 @@
             .then(resp => resp.text())
             .then(html => {
                 destiny.innerHTML = html
+                eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1])
             })
     }
 
@@ -32,7 +33,7 @@
     }
 
     window.onhashchange = e => navigateViaAjax(location.hash)
-    
+
     configureLinks()
     initialNavigation()
 })()
