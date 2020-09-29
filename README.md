@@ -1,2 +1,2 @@
 # JS-Web
- Web JS + Projects
+Studies
