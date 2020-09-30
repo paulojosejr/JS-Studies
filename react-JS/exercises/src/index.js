@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom' 
 
-const element = <h1>React 2</h1>
+import GoodMorning from './components/GoodMorning'
 
-ReactDOM.render(element, document.getElementById('root'))
+
+ReactDOM.render(<GoodMorning name="Paulo"/>, document.getElementById('root'))
