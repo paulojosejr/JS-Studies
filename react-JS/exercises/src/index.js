@@ -1,7 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom' 
+import ReactDOM from 'react-dom'
 
-import GoodMorning from './components/GoodMorning'
+import Salute from './components/Salute'
 
 
-ReactDOM.render(<GoodMorning name="Paulo"/>, document.getElementById('root'))
+ReactDOM.render(
+    <div>
+        <Salute type = "Good Morning" name="Juliana"/>
+    </div>
+    , document.getElementById('root'))
