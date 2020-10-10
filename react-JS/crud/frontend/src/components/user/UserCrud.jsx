@@ -5,7 +5,7 @@ import Main from '../template/Main'
 const headerProps = {
     icon: 'users',
     title: 'Users',
-    subtitle: 'User registration: Include, list, change and delete!'
+    subtitle: 'User Registration.'
 }
 
 const baseUrl = "http://localhost:3001/users"
@@ -135,11 +135,11 @@ export default class UserCrud extends Component {
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
-                        <button className="btn btn-warning"
+                        <button className="btn btn-warning ml-2 mb-1"
                             onClick={() => this.load(user)}>
                             <i className="fa fa-pencil"></i>
                         </button>
-                        <button className="btn btn-danger ml-2"
+                        <button className="btn btn-danger ml-2 mb-1"
                             onClick={() => this.remove(user)}>
                             <i className="fa fa-trash"></i>
                         </button>
