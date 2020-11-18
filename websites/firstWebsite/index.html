@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website For Testing</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
 </head>
+
 <body>
     <main>
         <header>
@@ -13,12 +17,40 @@
         </header>
         <article>
             <h2>Text 001</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus consectetur optio consequuntur nemo quaerat harum cumque saepe excepturi nobis quae similique aperiam eaque architecto eius quas fugit dicta, eveniet deleniti?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus consectetur optio consequuntur
+                nemo quaerat harum cumque saepe excepturi nobis quae similique aperiam eaque architecto eius quas fugit
+                dicta, eveniet deleniti?</p>
         </article>
         <article>
             <h2>Text 002</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sit ratione aliquam porro doloremque facilis eius. Ab omnis error quam odit porro numquam commodi facere incidunt neque ad. Nemo, molestiae.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sit ratione aliquam porro doloremque
+                facilis eius. Ab omnis error quam odit porro numquam commodi facere incidunt neque ad. Nemo, molestiae.
+            </p>
         </article>
     </main>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBubC-KBPfevgBEZ-_Dlm_p1EZuACVFEz8&callback=initMap&libraries=&v=weekly"
+        defer></script>
+    <script>
+        function initMap() {
+            // The location of porto
+            const porto = { lat: 41.14961, lng: -8.61099 };
+            // The map, centered at porto
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: porto,
+            });
+            // The marker, positioned at porto
+            const marker = new google.maps.Marker({
+                position: porto,
+                map: map,
+            });
+        }
+    </script>
 </body>
+
 </html>
